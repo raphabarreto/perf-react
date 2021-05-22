@@ -4,6 +4,7 @@ interface ProductItemProps {
   product: {
     id: number;
     price: number;
+    priceFormatted: string;
     title: string;
   };
   onAddToWhishlist: (id: number) => void;
@@ -12,7 +13,7 @@ interface ProductItemProps {
 function ProductItemComponent({ product, onAddToWhishlist }: ProductItemProps) {
   return (
     <div>
-      {product.title} - <strong> {product.price}</strong>
+      {product.title} - <strong> {product.priceFormatted}</strong>
       <button onClick={() => onAddToWhishlist(product.id)}>
         Add to whishlist
       </button>
